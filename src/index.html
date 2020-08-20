@@ -14,15 +14,72 @@
 <body>
 <div id="app">
     <div class="tapp">
+        <!-- Titel -->
+        <h1>Titel</h1>
         <div class="userInfo">
             <p id="intro">
-            <div class="btnWrapper">
-                <button id="loginBtn" class="button" />
+                Willkommen zu deinen Lieblingsseiten.
+            </p>
+        </div>
+        <!-- accordion -->
+        <div class="accordion" data-group="1">
+            <div class="accordion__head">
+                <div class="accordion__head__icon accordion--trigger">
+                    <i class="ts-angle-right"></i>
+                </div>
+                <div class="accordion__head__title  accordion--trigger">
+                     Formular
+                </div>
+            </div> <!--accordion__head-->
+            <div class="accordion__body">
+                <div class="accordion__item">
+                    <textarea name="" class="input" placeholder="Name" autogrow={true}></textarea> 
+                    <textarea name="" class="input" placeholder="E-Mail" autogrow={true}></textarea>
+                    <textarea name="" class="input" placeholder="Adresse (optional)" autogrow={true}></textarea>
+                    <textarea name="" class="input" placeholder="Kommentar" autogrow={true}></textarea>
+                </div>
+                <button class="button">absenden</button>
+            </div> <!--/accordion-body-->
+        </div> <!--/accordion-->
+        <!-- Filter -->
+        <div class="filter">
+            <div>
+                <i class="ts-chayns filtericon"></i>
+            </div>
+            <div>
+                <i id="i" class="fas fa-utensils filtericon"></i>
+            </div>
+            <div>
+                <textarea style="align-content: flex-end;" name="" class="input" placeholder="suchen" autogrow={true}></textarea>
             </div>
         </div>
+        <!--list of sites-->
+        <div class="list">
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/183068?size=57" alt="Logo von atlas pizza.">
+                <p>Atlas Pizza</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/1?size=57" alt="Logo von bamboo.">
+                <p>BamBoo!</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/183107?size=57" alt="Logo von cinemy.">
+                <p>Cinemy</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/79061?size=57" alt="Logo von nextone.">
+                <p>Nextone</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/144269?size=57" alt="Logo von unbrexit">
+                <p>The Unbrexit</p>
+            </div>
+        </div> <!--/list-->
     </div>
     <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
     <script src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
+    <script src="https://api.chayns-static.space/ui/v4.0/chayns-ui.min.js"></script>
 </div>
 </body>
 </html>

@@ -12,3 +12,49 @@
     padding-top: 10px;
   }
 }
+.input{
+  width: 100%;
+  margin: 5px 0;
+}
+.accordion__item{
+  display: flex;
+  flex-direction: column;
+}
+.button{
+  display: block;
+  margin: 0 auto 10px auto;
+}
+.filter{
+  margin: 10px 0;
+  padding: 10px;
+  border: solid 1px #3c3c3c;
+  background-color: #3c3c3c;
+  box-shadow: 0px 3px 5px black;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.filtericon{
+  // width: 50px;
+  // height: 50px;  Icon größer machen
+}
+.list{
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.list__items{
+  padding: 5px 0;
+  flex-direction: column;  
+  width: 90px;
+  text-align: center;
+}
+.site__img{
+  height: 70px;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+}
