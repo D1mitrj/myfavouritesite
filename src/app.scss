@@ -42,17 +42,27 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  // justify-content: space-evenly;
+  
 }
 .list__items{
   padding: 5px 0;
   flex-direction: column;  
-  width: 90px;
+  width: 93.5px;
   text-align: center;
 }
+// .list__items:last-child{
+//   margin-right: auto;
+// }
 .site__img{
   height: 60px;
   width: 60px;
   display: block;
   margin: 0 auto;
+}
+.site__name {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  margin: 0 5px;
 }
