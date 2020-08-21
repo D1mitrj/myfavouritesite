@@ -38,4 +38,4 @@
 // init();
 
 // accordion dropdown
- chayns.ui.initAll();
+// chayns.ui.initAll();

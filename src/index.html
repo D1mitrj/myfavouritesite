@@ -15,10 +15,11 @@
 <div id="app">
     <div class="tapp">
         <!-- Titel -->
-        <h1>Titel</h1>
+        <h1>My favourtie Sites</h1>
         <div class="userInfo">
             <p id="intro">
-                Willkommen zu deinen Lieblingsseiten.
+                Willkommen bei den Lieblingsseiten. Hier siehst du welche Seiten 
+                von Vielen als Lieblingsseite aufgerufen wurde. 
             </p>
         </div>
         <!-- accordion -->
@@ -33,49 +34,67 @@
             </div> <!--accordion__head-->
             <div class="accordion__body">
                 <div class="accordion__item">
-                    <textarea name="" class="input" placeholder="Name" autogrow={true}></textarea> 
-                    <textarea name="" class="input" placeholder="E-Mail" autogrow={true}></textarea>
-                    <textarea name="" class="input" placeholder="Adresse (optional)" autogrow={true}></textarea>
+                    <p>
+                        Du willst Deine Lieblingsseite hier sehen? Dann fühl das Formular 
+                        hier aus und schreib einen Kommentar wieso Deine Lieblingsseite 
+                        hier aufgeführt werden sollte.
+                    </p>
+                    <textarea name="" class="input" placeholder="Name"></textarea> 
+                    <textarea name="" class="input" placeholder="E-Mail"></textarea>
+                    <textarea name="" class="input" placeholder="Adresse (optional)"></textarea>
                     <textarea name="" class="input" placeholder="Kommentar" autogrow={true}></textarea>
+                    <textarea name="" class="input" placeholder="Link der Seite"></textarea>
                 </div>
-                <button class="button">absenden</button>
+                <button class="button">Absenden</button>
             </div> <!--/accordion-body-->
         </div> <!--/accordion-->
         <!-- Filter -->
-        <div class="filter">
-            <div>
-                <i class="ts-chayns filtericon"></i>
+        <div class="site__filter">
+            <div class="filter">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="filtericon">
+                        <i class=" fa ts-chayns fa-1x "></i>
+                    </div>
+                    <div class="filtericon">
+                        <i id="i" class="fas fa-utensils fa-1x "></i>
+                    </div>
+                    <div class="filtericon">
+                        <i class="fas fa-film fa-1x"></i>
+                    </div>
+                    <div class="filtericon">
+                        <i class="fas fa-compact-disc fa-1x"></i>
+                    </div>
+                </div>
+               
+                <div style="align-self: right;">
+                    <textarea name="" class="input" placeholder="suchen" autogrow={true}></textarea>
+                </div>
             </div>
-            <div>
-                <i id="i" class="fas fa-utensils filtericon"></i>
-            </div>
-            <div>
-                <textarea style="align-content: flex-end;" name="" class="input" placeholder="suchen" autogrow={true}></textarea>
-            </div>
+            <!--list of sites-->
+            <div class="list">
+                <div class="list__items">
+                    <img class="site__img" src="https://sub60.tobit.com/l/183068?size=57" alt="Logo von atlas pizza.">
+                    <p>Atlas Pizza</p>
+                </div>
+                <div class="list__items">
+                    <img class="site__img" src="https://sub60.tobit.com/l/1?size=57" alt="Logo von bamboo.">
+                    <p>BamBoo!</p>
+                </div>
+                <div class="list__items">
+                    <img class="site__img" src="https://sub60.tobit.com/l/183107?size=57" alt="Logo von cinemy.">
+                    <p>Cinemy</p>
+                </div>
+                <div class="list__items">
+                    <img class="site__img" src="https://sub60.tobit.com/l/79061?size=57" alt="Logo von nextone.">
+                    <p>Nextone</p>
+                </div>
+                <div class="list__items">
+                    <img class="site__img" src="https://sub60.tobit.com/l/144269?size=57" alt="Logo von unbrexit">
+                    <p>The Unbrexit</p>
+                </div>
+            </div> <!--/list-->
+            <p style="text-align: right; text-decoration-line: underline; margin: 10px;" >Mehr...</p>
         </div>
-        <!--list of sites-->
-        <div class="list">
-            <div class="list__items">
-                <img class="site__img" src="https://sub60.tobit.com/l/183068?size=57" alt="Logo von atlas pizza.">
-                <p>Atlas Pizza</p>
-            </div>
-            <div class="list__items">
-                <img class="site__img" src="https://sub60.tobit.com/l/1?size=57" alt="Logo von bamboo.">
-                <p>BamBoo!</p>
-            </div>
-            <div class="list__items">
-                <img class="site__img" src="https://sub60.tobit.com/l/183107?size=57" alt="Logo von cinemy.">
-                <p>Cinemy</p>
-            </div>
-            <div class="list__items">
-                <img class="site__img" src="https://sub60.tobit.com/l/79061?size=57" alt="Logo von nextone.">
-                <p>Nextone</p>
-            </div>
-            <div class="list__items">
-                <img class="site__img" src="https://sub60.tobit.com/l/144269?size=57" alt="Logo von unbrexit">
-                <p>The Unbrexit</p>
-            </div>
-        </div> <!--/list-->
     </div>
     <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
     <script src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
