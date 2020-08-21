@@ -39,11 +39,13 @@
                         hier aus und schreib einen Kommentar wieso Deine Lieblingsseite 
                         hier aufgeführt werden sollte.
                     </p>
-                    <textarea name="" class="input" placeholder="Name"></textarea> 
-                    <textarea name="" class="input" placeholder="E-Mail"></textarea>
-                    <textarea name="" class="input" placeholder="Adresse (optional)"></textarea>
-                    <textarea name="" class="input" placeholder="Kommentar" autogrow={true}></textarea>
-                    <textarea name="" class="input" placeholder="Link der Seite"></textarea>
+                    <div class="input-group textInp">
+                        <input class="input textInp" type="text" placeholder="Name"></input> 
+                        <input name="" class="input" placeholder="E-Mail"></input>
+                        <input name="" class="input" placeholder="Adresse (optional)"></input>
+                        <input name="" class="input" placeholder="Kommentar" autogrow={true}></input>
+                        <input name="" class="input" placeholder="Link der Seite"></input>
+                    </div>
                 </div>
                 <button class="button">Absenden</button>
             </div> <!--/accordion-body-->
@@ -71,28 +73,7 @@
                 </div>
             </div>
             <!--list of sites-->
-            <div class="list">
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/183068?size=57" alt="Logo von atlas pizza.">
-                    <p>Atlas Pizza</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/1?size=57" alt="Logo von bamboo.">
-                    <p>BamBoo!</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/183107?size=57" alt="Logo von cinemy.">
-                    <p>Cinemy</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/79061?size=57" alt="Logo von nextone.">
-                    <p>Nextone</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/144269?size=57" alt="Logo von unbrexit">
-                    <p>The Unbrexit</p>
-                </div>
-            </div> <!--/list-->
+            <div class="list"></div> 
             <p style="text-align: right; text-decoration-line: underline; margin: 10px;" >Mehr...</p>
         </div>
     </div>
