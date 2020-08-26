@@ -12,7 +12,16 @@ function init() {
     let timeout = null;
     // more.addEventListener('click', showAll);
     button.addEventListener('click', sendtoIntercom);
-    buttonMore.addEventListener('click', showAll);
+    buttonMore.addEventListener('click', () => {
+        if (flag === true) {
+            showAll();
+            flag = false;
+        } else if(flag === false) {
+            showLess();
+            flag = true;
+        }
+    });
+    // buttonMore.addEventListener('click', showLess);
 
     textarea.addEventListener('input', () => {
         if (timeout !== null) {
@@ -42,41 +51,53 @@ async function searchSite() {
     .then(data => buildElements(data.Data, 1));
 }
 let counter = 0;
+let flag = true;
+
 function showAll() {
+    if (flag === true) {
+        const searchedSite = document.querySelector('#search');
+        let searchedSitefiltered = '';
+        if (searchedSite.value === '') {
+        searchedSitefiltered = 'Ahaus';
+        } else {
+        searchedSitefiltered = searchedSite.value;
+        }
+
+        const less = document.querySelector('.more');
+        less.innerHTML = 'weniger...';
+
+        counter += 1;
+        // List of the sites.
+        fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSitefiltered}&Skip=${20 * counter}&Take=20`)
+        .then(response => response.json())
+        .then(data => buildElements(data.Data));
+    }
+    flag = false;
+}
+function showLess() {
+    if (flag === false) {
     const searchedSite = document.querySelector('#search');
+    const list = document.querySelector('.list');
+    const less = document.querySelector('.more');
+
     let searchedSitefiltered = '';
     if (searchedSite.value === '') {
-        searchedSitefiltered = 'Ahaus';
+    searchedSitefiltered = 'Ahaus';
     } else {
-        searchedSitefiltered = searchedSite.value;
+    searchedSitefiltered = searchedSite.value;
     }
 
-    // const list = document.querySelector('.list');
-    // const more = document.querySelector('.more');
-    // more.innerHTML = 'weniger...';
-    // more.className = 'less';
-    // const less = document.querySelector('.less');
+    list.innerHTML = '';
+    less.innerHTML = 'Mehr...';
 
-    counter += 1;
+    counter -= 1;
     // List of the sites.
     fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSitefiltered}&Skip=${20 * counter}&Take=20`)
     .then(response => response.json())
     .then(data => buildElements(data.Data));
+    }
+    flag = true;
 }
-// function showLess() {
-//     const searchedSite = document.querySelector('#search');
-//     const list = document.querySelector('.list');
-//     const less = document.querySelector('.less');
-
-//     list.innerHTML = '';
-//     less.innerHTML = 'Mehr...';
-//     less.className = 'more';
-
-//     // List of the sites.
-//     fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=20`)
-//     .then(response => response.json())
-//     .then(data => buildElements(data.Data));
-// }
 // Creating the Elements
 function buildElements(Data, search) {
     // when ever the elements were created, they first disapear.
