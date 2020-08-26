@@ -6,11 +6,13 @@ chayns.ui.initAll();
 // All functions that are not able to run, will be run from the init function.
 function init() {
     const button = document.querySelector('.btn');
+    // const buttonMore = document.querySelector('btnMore');
     const textarea = document.getElementById('search');
-    const more = document.querySelector('.more');
+    // const more = document.querySelector('.more');
     let timeout = null;
-    more.addEventListener('click', showAll);
+    // more.addEventListener('click', showAll);
     button.addEventListener('click', sendtoIntercom);
+    // buttonMore.addEventListener('click', showAll);
 
     textarea.addEventListener('input', () => {
         if (timeout !== null) {
@@ -21,10 +23,6 @@ function init() {
         }, 500);
     });
 
-    if () {
-        
-    }
-
     searchSite();
 }
 // Search for an site.
@@ -32,13 +30,18 @@ async function searchSite() {
     chayns.showWaitCursor();
     const list = document.querySelector('.list');
     const searchedSite = document.querySelector('#search');
+    let searchedSitefiltered = '';
+    if (searchedSite.value === '') {
+        searchedSitefiltered = 'Ahaus';
+    }
+    else {
+        searchedSitefiltered = searchedSite.value;
+    }
 
     // List of the sites.
-    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=20`)
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSitefiltered}&Skip=0&Take=20`)
     .then(response => response.json())
     .then(data => buildElements(data.Data, 1));
-
-    
 }
 let counter = 0;
 function showAll() {

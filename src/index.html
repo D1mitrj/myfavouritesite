@@ -12,8 +12,13 @@
 <body>
 <div id="app">
     <div class="tapp">
-        <!-- Titel -->
-        <h1>My favourtie Sites</h1>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <!-- Titel -->
+            <h1>My favourtie Sites</h1>
+            <div style="align-self: right;">
+                <textarea id="search" name="" class="input " placeholder="suchen" autogrow={true}></textarea>
+            </div>
+        </div>
         <div class="userInfo">
             <p id="intro">
                 Willkommen bei den Lieblingsseiten. Hier siehst du welche Seiten 
@@ -65,16 +70,14 @@
                         <i class="fas fa-compact-disc fa-2x"></i>
                     </div>
                 </div> -->
-               
-                <div style="align-self: right;">
-                    <textarea id="search" name="" class="input " placeholder="suchen" autogrow={true}></textarea>
-                </div>
             </div>
             <!--list of sites-->
             
                 <div class="list"></div> 
-            
-        <p class="more" style="text-align: right; text-decoration-line: underline; margin: 10px; cursor: pointer;" >Mehr...</p>
+            <div class="button btnMore">
+                <p class="more">Mehr...</p>
+            </div>
+        
         </div>
     </div>
     <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
