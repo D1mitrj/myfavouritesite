@@ -7,9 +7,9 @@ chayns.ui.initAll();
 function init() {
     const button = document.querySelector('.btn');
     const textarea = document.getElementById('search');
+    const more = document.querySelector('.more');
     let timeout = null;
-
-    // more.addEventListener('click', changeBool);
+    more.addEventListener('click', showAll);
     button.addEventListener('click', sendtoIntercom);
 
     textarea.addEventListener('input', () => {
@@ -20,22 +20,24 @@ function init() {
             searchSite();
         }, 1000);
     });
-
     searchSite();
+}
+function showAll() {
+    const searchedSite = document.querySelector('#search');
+    // const list = document.querySelector('.list');
+
+    // List of the sites.
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=20&Take=30`)
+    .then(response => response.json())
+    .then(data => buildElements(data.Data));
 }
 // Creating the Elements
 function buildElements(Data) {
     // when ever the elements were created, they first disapear.
     const list = document.querySelector('.list');
-    list.innerHTML = '';
-    const more = document.querySelector('.more');
-    more.addEventListener('click', {let teilen = Data.slice(0, 20);});
-    
-    
+    // list.innerHTML = '';
 
-    more.onclick = () => { teilen = Data; };
-
-    teilen.forEach((site) => {
+    Data.forEach((site) => {
         const div = document.createElement('div');
         const image = document.createElement('img');
         const p = document.createElement('div');
@@ -86,10 +88,12 @@ function sendtoIntercom() {
 }
 // Search for an site.
 function searchSite() {
+    const list = document.querySelector('.list');
+    list.innerHTML = '';
     const searchedSite = document.querySelector('#search');
 
     // List of the sites.
-    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=50`)
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=20`)
     .then(response => response.json())
     .then(data => buildElements(data.Data));
     }
