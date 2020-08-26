@@ -6,13 +6,13 @@ chayns.ui.initAll();
 // All functions that are not able to run, will be run from the init function.
 function init() {
     const button = document.querySelector('.btn');
-    // const buttonMore = document.querySelector('btnMore');
+    const buttonMore = document.getElementById('btnMore');
     const textarea = document.getElementById('search');
     // const more = document.querySelector('.more');
     let timeout = null;
     // more.addEventListener('click', showAll);
     button.addEventListener('click', sendtoIntercom);
-    // buttonMore.addEventListener('click', showAll);
+    buttonMore.addEventListener('click', showAll);
 
     textarea.addEventListener('input', () => {
         if (timeout !== null) {
@@ -28,13 +28,11 @@ function init() {
 // Search for an site.
 async function searchSite() {
     chayns.showWaitCursor();
-    const list = document.querySelector('.list');
     const searchedSite = document.querySelector('#search');
     let searchedSitefiltered = '';
     if (searchedSite.value === '') {
         searchedSitefiltered = 'Ahaus';
-    }
-    else {
+    } else {
         searchedSitefiltered = searchedSite.value;
     }
 
@@ -46,6 +44,13 @@ async function searchSite() {
 let counter = 0;
 function showAll() {
     const searchedSite = document.querySelector('#search');
+    let searchedSitefiltered = '';
+    if (searchedSite.value === '') {
+        searchedSitefiltered = 'Ahaus';
+    } else {
+        searchedSitefiltered = searchedSite.value;
+    }
+
     // const list = document.querySelector('.list');
     // const more = document.querySelector('.more');
     // more.innerHTML = 'weniger...';
@@ -54,7 +59,7 @@ function showAll() {
 
     counter += 1;
     // List of the sites.
-    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=${20 * counter}&Take=20`)
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSitefiltered}&Skip=${20 * counter}&Take=20`)
     .then(response => response.json())
     .then(data => buildElements(data.Data));
 }
@@ -109,7 +114,6 @@ function buildElements(Data, search) {
         // textnodes
         div.appendChild(p);
     });
-    
     chayns.hideWaitCursor();
 }
 // Formulardata send via intercom.
