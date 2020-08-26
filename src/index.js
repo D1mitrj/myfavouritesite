@@ -18,24 +18,64 @@ function init() {
         }
         timeout = setTimeout(() => {
             searchSite();
-        }, 1000);
+        }, 500);
     });
+
+    if () {
+        
+    }
+
     searchSite();
 }
+// Search for an site.
+async function searchSite() {
+    chayns.showWaitCursor();
+    const list = document.querySelector('.list');
+    const searchedSite = document.querySelector('#search');
+
+    // List of the sites.
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=20`)
+    .then(response => response.json())
+    .then(data => buildElements(data.Data, 1));
+
+    
+}
+let counter = 0;
 function showAll() {
     const searchedSite = document.querySelector('#search');
     // const list = document.querySelector('.list');
+    // const more = document.querySelector('.more');
+    // more.innerHTML = 'weniger...';
+    // more.className = 'less';
+    // const less = document.querySelector('.less');
 
+    counter += 1;
     // List of the sites.
-    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=20&Take=30`)
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=${20 * counter}&Take=20`)
     .then(response => response.json())
     .then(data => buildElements(data.Data));
 }
+// function showLess() {
+//     const searchedSite = document.querySelector('#search');
+//     const list = document.querySelector('.list');
+//     const less = document.querySelector('.less');
+
+//     list.innerHTML = '';
+//     less.innerHTML = 'Mehr...';
+//     less.className = 'more';
+
+//     // List of the sites.
+//     fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=20`)
+//     .then(response => response.json())
+//     .then(data => buildElements(data.Data));
+// }
 // Creating the Elements
-function buildElements(Data) {
+function buildElements(Data, search) {
     // when ever the elements were created, they first disapear.
     const list = document.querySelector('.list');
-    // list.innerHTML = '';
+    if (search) {
+        list.innerHTML = '';
+    }
 
     Data.forEach((site) => {
         const div = document.createElement('div');
@@ -66,6 +106,8 @@ function buildElements(Data) {
         // textnodes
         div.appendChild(p);
     });
+    
+    chayns.hideWaitCursor();
 }
 // Formulardata send via intercom.
 // it check for login.
@@ -86,17 +128,7 @@ function sendtoIntercom() {
         });
     }
 }
-// Search for an site.
-function searchSite() {
-    const list = document.querySelector('.list');
-    list.innerHTML = '';
-    const searchedSite = document.querySelector('#search');
 
-    // List of the sites.
-    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchedSite.value}&Skip=0&Take=20`)
-    .then(response => response.json())
-    .then(data => buildElements(data.Data));
-    }
 
 function login() {
    // optional -> prevents site reload
