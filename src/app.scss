@@ -1,60 +1,72 @@
 .userInfo {
   display: flex;
   flex-direction: column;
-
-  p {
-    text-align: center;
-  }
-
-  .btnWrapper {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-  }
 }
+// Textareas
 .input{
   width: 100%;
-  margin: 5px 0;
+  margin: 5px 5px 0 0;
 }
 .accordion__item{
   display: flex;
   flex-direction: column;
 }
+//send
 .button{
   display: block;
   margin: 0 auto 10px auto;
 }
-.filter{
+#btnMore{
+  width: 90px;
+}
+//div from the filter area
+.site__filter{
   margin: 10px 0;
-  padding: 10px;
   border: solid 1px #3c3c3c;
   background-color: #3c3c3c;
   box-shadow: 0px 3px 5px black;
   border-radius: 5px;
-
+}
+.filter{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 5px 20px;
 }
 .filtericon{
-  // width: 50px;
-  // height: 50px;  Icon größer machen
-}
-.list{
+  margin: auto 5px; 
+  display: block;
+  // border: white solid 0.5px;
   padding: 5px;
+  color: #717171;
+}
+//list for the favourite sites 
+.list{
+  padding: 10px 5px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  // justify-content: space-evenly;
+  
 }
 .list__items{
   padding: 5px 0;
   flex-direction: column;  
-  width: 90px;
+  width: 93.5px;
   text-align: center;
 }
+// .list__items:last-child{
+//   margin-right: auto;
+// }
 .site__img{
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   display: block;
   margin: 0 auto;
+}
+.site__name {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  margin: 0 5px;
 }
