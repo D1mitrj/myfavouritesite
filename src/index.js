@@ -21,7 +21,6 @@ function init() {
             flag = true;
         }
     });
-    // buttonMore.addEventListener('click', showLess);
 
     textarea.addEventListener('input', () => {
         if (timeout !== null) {
