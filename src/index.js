@@ -30,7 +30,7 @@ function init() {
             searchSite();
         }, 500);
     });
-
+//hotfix
     searchSite();
 }
 // Search for an site.
