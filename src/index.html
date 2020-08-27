@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="https://api.chayns.net/css/v4.2">
-
     <title>chayns® ESNext Template</title>
 </head>
 <body>
 <div id="app">
     <div class="tapp">
-        <!-- Titel -->
-        <h1>My favourtie Sites</h1>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <!-- Titel -->
+            <h1>My favourtie Sites</h1>
+            <div style="align-self: right;">
+                <textarea id="search" name="" class="input " placeholder="suchen" autogrow={true}></textarea>
+            </div>
+        </div>
         <div class="userInfo">
             <p id="intro">
                 Willkommen bei den Lieblingsseiten. Hier siehst du welche Seiten 
@@ -39,66 +42,73 @@
                         hier aus und schreib einen Kommentar wieso Deine Lieblingsseite 
                         hier aufgeführt werden sollte.
                     </p>
-                    <textarea name="" class="input" placeholder="Name"></textarea> 
-                    <textarea name="" class="input" placeholder="E-Mail"></textarea>
-                    <textarea name="" class="input" placeholder="Adresse (optional)"></textarea>
-                    <textarea name="" class="input" placeholder="Kommentar" autogrow={true}></textarea>
-                    <textarea name="" class="input" placeholder="Link der Seite"></textarea>
+                    <div class="input-group textInp">
+                        <input class="input name" placeholder="Name"></input> 
+                        <input class="input e_mail" placeholder="E-Mail"></input>
+                        <input class="input adresse" placeholder="Adresse (optional)"></input>
+                        <input class="input kommentar" placeholder="Kommentar" autogrow={true}></input>
+                        <input class="input link_der_seite" placeholder="Link der Seite"></input>
+                    </div>
                 </div>
-                <button class="button">Absenden</button>
+            <button class="button btn">Absenden</button>
             </div> <!--/accordion-body-->
         </div> <!--/accordion-->
+        
+
         <!-- Filter -->
         <div class="site__filter">
+        <!--list of sites-->
+        <div class="list">
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/183068?size=57" alt="Logo von atlas pizza.">
+                <p>Atlas Pizza</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/1?size=57" alt="Logo von bamboo.">
+                <p>BamBoo!</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/183107?size=57" alt="Logo von cinemy.">
+                <p>Cinemy</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/79061?size=57" alt="Logo von nextone.">
+                <p>Nextone</p>
+            </div>
+            <div class="list__items">
+                <img class="site__img" src="https://sub60.tobit.com/l/144269?size=57" alt="Logo von unbrexit">
+                <p>The Unbrexit</p>
+            </div>
+        </div> <!--/list-->
+
             <div class="filter">
-                <div style="display: flex; flex-direction: row;">
+                <!-- <div style="display: flex; flex-direction: row;">
                     <div class="filtericon">
-                        <i class=" fa ts-chayns fa-1x "></i>
+                        <i class=" fa ts-chayns fa-2x "></i>
                     </div>
                     <div class="filtericon">
-                        <i id="i" class="fas fa-utensils fa-1x "></i>
+                        <i id="i" class="fas fa-utensils fa-2x "></i>
                     </div>
                     <div class="filtericon">
-                        <i class="fas fa-film fa-1x"></i>
+                        <i class="fas fa-film fa-2x"></i>
                     </div>
                     <div class="filtericon">
-                        <i class="fas fa-compact-disc fa-1x"></i>
+                        <i class="fas fa-compact-disc fa-2x"></i>
                     </div>
-                </div>
-               
-                <div style="align-self: right;">
-                    <textarea name="" class="input" placeholder="suchen" autogrow={true}></textarea>
-                </div>
+                </div> -->
             </div>
             <!--list of sites-->
-            <div class="list">
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/183068?size=57" alt="Logo von atlas pizza.">
-                    <p>Atlas Pizza</p>
+            
+                <div class="list"></div> 
+                <div class="button" id = "btnMore">
+                    <p class="more">Mehr...</p>
                 </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/1?size=57" alt="Logo von bamboo.">
-                    <p>BamBoo!</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/183107?size=57" alt="Logo von cinemy.">
-                    <p>Cinemy</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/79061?size=57" alt="Logo von nextone.">
-                    <p>Nextone</p>
-                </div>
-                <div class="list__items">
-                    <img class="site__img" src="https://sub60.tobit.com/l/144269?size=57" alt="Logo von unbrexit">
-                    <p>The Unbrexit</p>
-                </div>
-            </div> <!--/list-->
-            <p style="text-align: right; text-decoration-line: underline; margin: 10px;" >Mehr...</p>
         </div>
     </div>
     <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
     <script src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
     <script src="https://api.chayns-static.space/ui/v4.0/chayns-ui.min.js"></script>
+    <script src="./index.js"></script>
 </div>
 </body>
 </html>
