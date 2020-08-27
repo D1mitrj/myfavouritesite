@@ -23,6 +23,14 @@ function init() {
     });
     // buttonMore.addEventListener('click', showLess);
 
+    textarea.addEventListener('input', () => {
+        if (timeout !== null) {
+            clearTimeout(timeout);
+        }
+        timeout = setTimeout(() => {
+            searchSite();
+        }, 500);
+    });
 
     searchSite();
 }
