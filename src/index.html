@@ -25,7 +25,34 @@
                 von Vielen als Lieblingsseite aufgerufen wurde. 
             </p>
         </div>
-        
+        <!-- accordion -->
+        <div class="accordion" data-group="1">
+            <div class="accordion__head">
+                <div class="accordion__head__icon accordion--trigger">
+                    <i class="ts-angle-right"></i>
+                </div>
+                <div class="accordion__head__title  accordion--trigger">
+                     Formular
+                </div>
+            </div> <!--accordion__head-->
+            <div class="accordion__body">
+                <div class="accordion__item">
+                    <p>
+                        Du willst Deine Lieblingsseite hier sehen? Dann fühl das Formular 
+                        hier aus und schreib einen Kommentar wieso Deine Lieblingsseite 
+                        hier aufgeführt werden sollte.
+                    </p>
+                    <div class="input-group textInp">
+                        <input class="input name" placeholder="Name"></input> 
+                        <input class="input e_mail" placeholder="E-Mail"></input>
+                        <input class="input adresse" placeholder="Adresse (optional)"></input>
+                        <input class="input kommentar" placeholder="Kommentar" autogrow={true}></input>
+                        <input class="input link_der_seite" placeholder="Link der Seite"></input>
+                    </div>
+                </div>
+            <button class="button btn">Absenden</button>
+            </div> <!--/accordion-body-->
+        </div> <!--/accordion-->
         <!-- Filter -->
         <div class="site__filter">
             <div class="filter">
